@@ -1,0 +1,30 @@
+<!--Base template-->
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset='utf-8'>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Title block-->
+        <title> {% block title %} {% endblock %}</title>
+        <!--General css-->
+        <link rel="stylesheet" href="{{url_for('static', filename = 'styles.css')}}"/>
+    </head>
+
+    <body>
+        <header>
+            <h1>Welcome! <br> Where all those who wander are not lost</h1>
+        </header>
+
+        <main>
+
+        </main>
+
+        <footer>
+
+        </footer>
+
+    </body>
+
+</html>
