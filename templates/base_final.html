@@ -9,16 +9,16 @@
         <!--Title block-->
         <title> {% block title %} {% endblock %}</title>
         <!--General css-->
-        <link rel="stylesheet" href="{{url_for('static', filename = 'styles.css')}}"/>
+        <link rel="stylesheet" href="{{url_for('static', filename = 'style_final.css')}}"/>
     </head>
 
     <body>
         <header>
-            <h1>Welcome! <br> Where all those who wander are not lost</h1>
+            {% block header %}{% endblock %}
         </header>
 
         <main>
-
+            {% block content %}{% endblock %}
         </main>
 
         <footer>
