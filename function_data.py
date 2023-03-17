@@ -2,7 +2,7 @@ import requests
 import urllib
 
 
-# define a function - get_book_data
+# define a function - url access
 
 # define a function - get_book_safe
 
