@@ -1,6 +1,7 @@
 <!--Base template-->
 <!DOCTYPE html>
 <html lang="en">
+
     <!--Head-->
     <head>
         <meta charset='utf-8'>
@@ -12,11 +13,12 @@
     </head>
     <!--Body-->
     <body>
+
         <header>
-            <img src="image/library-background.jpg" alt="library scenery">
             <h1>"Those who wander are not lost"</h1>
             {% block header %} {% endblock %}
         </header>
+
         <main>
              {% block nav %}
                 <!--Navigating-->
@@ -44,6 +46,7 @@
         <!--Footer-->
         <div>
             <footer>
+                <!--image src="https://wallpapersafari.com/free-library-wallpaper/"-->
                 Data from <a href="https://openlibrary.org"> Open Library </a>
             </footer>
         </div>

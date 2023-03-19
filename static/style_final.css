@@ -1,13 +1,15 @@
-header {
-    text
-}
 
 
 body {
-    background-image: ur("image/library-background.jpg");
+
+    background: url("/static/image/library-background.jpg");
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+    background-attach: fixed;
+}
+
+html {
+    font-family: cursive, Monospace;
+    font-style: oblique;
 }
 
 form {
