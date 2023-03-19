@@ -3,17 +3,15 @@
 {% extends "base_final.html" %}
 <!--html head, Title-->
     {% block title %}
-        Results
+        Author Results
     {% endblock %}
 
 <!--html body-->
-
     <!--Header block-->
     {% block header %}
-        <h2>Results for: {{ user_input }}</h2>
+        <h2>Author Results for: {{ user_input }}</h2>
         <p><a class="searchlink" href=" {{ search_url }}" > Search url </a></p>
     {% endblock %}
-
 
 
     <!--Content block-->
@@ -21,10 +19,10 @@
         {% if search_data.title | length %}
             <div>
                 <section class="display_img">
-                    {% for b_cover in book_cover_url %}
-                        <div class="individual_img">
-                            {% if b_cover != None %}
-                                <img src="{{ b_cover }}" alt="Book Reference" width="50" height="55">
+                    {% for url in author_cover_url%}
+                        <div class="image">
+                            {% if url %}
+                                <img src="{{ url }}" alt="Author Photo Reference" width="50" height="55">
                             {% else %}
                                 <img src="" alt="None" width="50" height="55">
                             {% endif %}
@@ -32,13 +30,21 @@
                     {% endfor %}
                 </section>
                 <section class="display_info">
-                    {% for key in book_info %}
-                        <div class="individual_info">
-                            {{ key["title"] }}<br>
-                            {{ key["name"] }}<br>
-                            {{ key["pub_year"] }}<br>
-                            {{ key["pages"] }}<br>
+                    {% for key in author_bio %}
+                        <div class="info">
+                            {% if key.bio != "" %}
+
+                                <p>{{ key.bio }} <br>
+                                    {{ key.url }}</p>
+                            {% endif %}
                         </div>
+                    {% endfor %}
+                </section>
+                <section>
+                    {% for urls in redirect_url %}
+                        <ul>
+                            <li><a href="{{ urls }}">{{ indentifier }} Search relate link</a> </li>
+                        </ul>
                     {% endfor %}
                 </section>
             </div>

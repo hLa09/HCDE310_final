@@ -13,14 +13,15 @@
         <h2>Welcome!</h2>
     {% endblock %}
 
+
     <!--Content block-->
     {% block content %}
         <div class="question">
-            <p>What interest you today?</p>
+            <p>Who do you want to learn about today?</p>
         </div>
         <!--form where user input book, author, ects for search-->
-        <div class="form">
-            <form action="{{ url_for('results') }}" method="POST">
+        <div>
+            <form action="{{ url_for('authors') }}" method="POST">
                 <!--Search bar-->
                 <p>
                     <label for="user_input">Search</label>
@@ -29,14 +30,12 @@
                 <p class="example_search"> <em>Examples:</em></p>
                     <ul class="example_list">
                         <li>Query: Sarah J. Maas <em>or</em> A Court of Thorns and Roses</li>
-                        <li>Books: A Court of Thorns and Roses</li>
                         <li>Author: Sarah J. Maas</li>
                     </ul>
                 <p>
                     <label for="identifier">Choose a search key:</label>
                     <select class="identifier"  id="identifier" name="identifier" required>
                         <option value="q">Query</option>
-                        <option value="title">Book Title</option>
                         <option value="author">Author</option>
                     </select>
                 </p>

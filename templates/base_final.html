@@ -1,33 +1,51 @@
 <!--Base template-->
 <!DOCTYPE html>
-
 <html lang="en">
-
+    <!--Head-->
     <head>
         <meta charset='utf-8'>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--Title block-->
         <title> {% block title %} {% endblock %}</title>
-        <!--General css-->
-        <link rel="stylesheet" href="{{url_for('static', filename = 'style_final.css')}}"/>
+        <!--General CSS-->
+        <link rel="stylesheet" href="{{url_for('static', filename = 'style_final.css')}}">
     </head>
-
+    <!--Body-->
     <body>
         <header>
-            <h1>Welcome!</h1>
-            <h2>"Those who wander are not lost"</h2>
+            <img src="image/library-background.jpg" alt="library scenery">
+            <h1>"Those who wander are not lost"</h1>
             {% block header %} {% endblock %}
         </header>
-
         <main>
-            {% block content %} {% endblock %}
+             {% block nav %}
+                <!--Navigating-->
+                <section>
+                    <div>
+                        <nav class="navbar-fixed position">
+                            <div class="container">
+                                <!--link to Home page-->
+                                <ul>
+                                    <li><a href="{{ url_for('index') }}"> Home</a></li>
+                                    <li><a href="{{ url_for('author')}}"> Author Search</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </section>
+            {% endblock %}
+            <!--Content-->
+            <section>
+                <div class="content">
+                    {% block content %} {% endblock %}
+                </div>
+            </section>
         </main>
-
+        <!--Footer-->
         <div>
             <footer>
                 Data from <a href="https://openlibrary.org"> Open Library </a>
             </footer>
         </div>
     </body>
-
 </html>

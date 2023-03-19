@@ -1,1 +1,32 @@
+header {
+    text
+}
+
+
+body {
+    background-image: ur("image/library-background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+form {
+
+}
+
+section {
+
+}
+
+div {
+
+}
+
+input {
+
+}
+
+ul {
+
+}
 
