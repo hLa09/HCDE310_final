@@ -1,4 +1,4 @@
-<!--Template index -->
+<!--Template author -->
 <!--Inherited from base html template-->
 {% extends "base_final.html" %}
 <!--html head, Title-->
@@ -7,20 +7,34 @@
     {% endblock %}
 
 <!--html body-->
-
     <!--Header block-->
     {% block header %}
-        <h2>Welcome!</h2>
     {% endblock %}
 
+     {% block nav %}
+    <!--Navigating-->
+        <nav class="nav">
+            <div class="container">
+                <ul class="drop">
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Home</a>
+                        <div class="dropdown-content">
+                            <a href="{{ url_for('author')}}"> Author Search</a>
+                            <a href="{{ url_for('index') }}"> General Search</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    {% endblock %}
 
     <!--Content block-->
     {% block content %}
-        <div class="question">
-            <p>Who do you want to learn about today?</p>
+        <div class="ques">
+            <p class="question">Who do you want to learn about today?</p>
         </div>
         <!--form where user input book, author, ects for search-->
-        <div>
+        <div class="form">
             <form action="{{ url_for('authors') }}" method="POST">
                 <!--Search bar-->
                 <p>

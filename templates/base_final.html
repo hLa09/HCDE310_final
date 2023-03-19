@@ -15,26 +15,29 @@
     <body>
 
         <header>
-            <h1>"Those who wander are not lost"</h1>
-            {% block header %} {% endblock %}
+            <div class="header_nav">
+                <h2>"--Those who wander are not lost--"</h2>
+                {% block header %}
+                {% endblock %}
+            </div>
         </header>
 
         <main>
-             {% block nav %}
-                <!--Navigating-->
-                <section>
-                    <div>
-                        <nav class="navbar-fixed position">
-                            <div class="container">
-                                <!--link to Home page-->
-                                <ul>
-                                    <li><a href="{{ url_for('index') }}"> Home</a></li>
-                                    <li><a href="{{ url_for('author')}}"> Author Search</a></li>
-                                </ul>
-                            </div>
-                        </nav>
+            {% block nav %}
+            <!--Navigating-->
+                <nav class="nav">
+                    <div class="container">
+                        <ul class="drop">
+                            <li class="dropdown">
+                                <a href="javascript:void(0)" class="dropbtn">Home</a>
+                                <div class="dropdown-content">
+                                    <a href="{{ url_for('author')}}"> Author Search</a>
+                                    <a href="{{ url_for('index') }}"> General Search</a>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                </section>
+                </nav>
             {% endblock %}
             <!--Content-->
             <section>
@@ -44,10 +47,14 @@
             </section>
         </main>
         <!--Footer-->
-        <div>
+        <div class="foot">
             <footer>
                 <!--image src="https://wallpapersafari.com/free-library-wallpaper/"-->
+                <!--image src="https://lovepik.com/images/png-design.html"-->
                 Data from <a href="https://openlibrary.org"> Open Library </a>
+                Image data from <a href='https://lovepik.com/images/png-design.html'>Design Png vectors by Lovepik.com</a> <br>
+                and <a href="https://wallpapersafari.com/free-library-wallpaper/">Wallpaper Safari</a>
+
             </footer>
         </div>
     </body>

@@ -7,16 +7,29 @@
     {% endblock %}
 
 <!--html body-->
-
-    <!--Header block-->
     {% block header %}
-        <h2>Welcome!</h2>
     {% endblock %}
 
+    {% block nav %}
+    <!--Navigating-->
+        <nav class="nav">
+            <div class="container">
+                <ul class="drop">
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Home</a>
+                        <div class="dropdown-content">
+                            <a href="{{ url_for('author')}}"> Author Search</a>
+                            <a href="{{ url_for('index') }}"> General Search</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    {% endblock %}
     <!--Content block-->
     {% block content %}
-        <div class="question">
-            <p>What interest you today?</p>
+        <div class="ques">
+            <p class="question">What interest you today?</p>
         </div>
         <!--form where user input book, author, ects for search-->
         <div class="form">
