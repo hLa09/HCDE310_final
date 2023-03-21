@@ -106,6 +106,7 @@ li.dropdown {
 
 .dropdown:hover .dropdown-content {
     display: block;
+    z-index: 1;
 }
 
 form {
@@ -331,7 +332,7 @@ img {
     width: 50%;
     height: 620px;
     overflow: auto;
-    z-index: 2;
+    z-index: 0;
 }
 
 .image {
