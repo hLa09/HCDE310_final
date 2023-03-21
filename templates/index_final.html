@@ -8,6 +8,7 @@
 
 <!--html body-->
     {% block header %}
+        <h2>What are you interest in today?</h2>
     {% endblock %}
 
     {% block nav %}
@@ -19,7 +20,6 @@
                         <a href="javascript:void(0)" class="dropbtn">Home</a>
                         <div class="dropdown-content">
                             <a href="{{ url_for('author')}}"> Author Search</a>
-                            <a href="{{ url_for('index') }}"> General Search</a>
                         </div>
                     </li>
                 </ul>
@@ -28,36 +28,76 @@
     {% endblock %}
     <!--Content block-->
     {% block content %}
-        <div class="ques">
-            <p class="question">What interest you today?</p>
+
+            <!----"Those who wander are not lost--"-->
+        <div class="motion" aria-labelledby="moto_label">
+            <span id="moto_label" class="moto__placeholder">"--Those who wander are not lost--"</span>
+            <span aria-role="presentation">
+                <span class="moto">"</span>
+                <span class="moto1">-</span>
+                <span class="moto2">-</span>
+                <span class="moto3">T</span>
+                <span class="moto4">h</span>
+                <span class="moto5">o</span>
+                <span class="moto6">s</span>
+                <span class="moto7">e</span>
+                <span class="moto8"> </span>
+                <span class="moto9">w</span>
+                <span class="moto10">h</span>
+                <span class="moto11">o</span>
+                <span class="moto12"> </span>
+                <span class="moto13">w</span>
+                <span class="moto14">a</span>
+                <span class="moto15">n</span>
+                <span class="moto16">d</span>
+                <span class="moto17">e</span>
+                <span class="moto18">r</span>
+                <span class="moto19"> </span>
+                <span class="moto20">a</span>
+                <span class="moto21">r</span>
+                <span class="moto22">e</span>
+                <span class="moto23"> </span>
+                <span class="moto24">n</span>
+                <span class="moto25">o</span>
+                <span class="moto26">t</span>
+                <span class="moto27"> </span>
+                <span class="moto28">l</span>
+                <span class="moto29">o</span>
+                <span class="moto30">s</span>
+                <span class="moto31">t</span>
+                <span class="moto32">-</span>
+                <span class="moto33">-</span>
+                <span class="moto34">"</span>
+            </span>
+            <div class="book"></div>
         </div>
+
         <!--form where user input book, author, ects for search-->
         <div class="form">
-            <form action="{{ url_for('results') }}" method="POST">
-                <!--Search bar-->
+            <form class="search_form" action="{{ url_for('results') }}" method="POST">
+                    <!--Search bar-->
+                <div class="search">
+                    <input class="input" type="text" id="user_input" name="user_input" value="Search" required>
+                    <!-- Submit button-->
+                    <button class="button" type="submit" value=""></button>
+                </div>
                 <p>
-                    <label for="user_input">Search</label>
-                    <input class="input" type="text" id="user_input" name="user_input" required>
-                </p>
-                <p class="example_search"> <em>Examples:</em></p>
-                    <ul class="example_list">
-                        <li>Query: Sarah J. Maas <em>or</em> A Court of Thorns and Roses</li>
-                        <li>Books: A Court of Thorns and Roses</li>
-                        <li>Author: Sarah J. Maas</li>
-                    </ul>
-                <p>
-                    <label for="identifier">Choose a search key:</label>
+                    <label class="user" for="identifier">Search key:</label>
                     <select class="identifier"  id="identifier" name="identifier" required>
                         <option value="q">Query</option>
                         <option value="title">Book Title</option>
                         <option value="author">Author</option>
                     </select>
                 </p>
-                <!-- Submit buttom-->
-                <p>
-                    <input class="button" type="submit" value="Submit">
-                </p>
             </form>
         </div>
+
+        <div class="example_bubble">
+                <p class="example_list">Query: Sarah J. Maas</p>
+                <p class="example_list">Query: A Court of Thorns and Roses</p>
+                <p class="example_list">Books: A Court of Thorns and Roses</p>
+                <p class="example_list">Author: Sarah J. Maas</p>
+        </div>
     {% endblock %}
+
 

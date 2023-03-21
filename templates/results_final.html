@@ -10,36 +10,48 @@
 
     <!--Header block-->
     {% block header %}
-        <h2>Results for: {{ user_input }}</h2>
-        <p><a class="searchlink" href=" {{ search_url }}" > Search url </a></p>
+        <h2><a class="searchlink" href=" {{ search_url }}" >Results For</a>: {{ user_input }}</h2>
     {% endblock %}
 
     <!--Content block-->
     {% block content %}
         {% if search_data.title | length %}
-            <div>
-                <section class="display_img">
-                    {% for b_cover in book_cover_url %}
-                        <div class="individual_img">
-                            {% if b_cover != None %}
-                                <img src="{{ b_cover }}" alt="Book Reference" width="50" height="55">
-                            {% else %}
-                                <img src="" alt="None" width="50" height="55">
-                            {% endif %}
-                        </div>
-                    {% endfor %}
-                </section>
-                <section class="display_info">
-                    {% for key in book_info %}
-                        <div class="individual_info">
-                            {{ key["title"] }}<br>
-                            {{ key["name"] }}<br>
-                            {{ key["pub_year"] }}<br>
-                            {{ key["pages"] }}<br>
-                        </div>
-                    {% endfor %}
-                </section>
-            </div>
+
+                <div class="grid_container">
+                    <div class="grid_1">
+                        <ul class="list">
+                            {% for b_cover in book_cover_url %}
+                                {% if b_cover != None %}
+                                <li class="list_content">
+                                    <div class="grid-item">
+                                        <img src="{{ b_cover }}" alt="Book Reference" width="50" height="55">
+                                    </div>
+                                </li>
+                                {% else %}
+                                    <li class="list_content">
+                                        <div class="grid-item">
+                                            <img src="" alt="None" width="50" height="55">
+                                        </div>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="grid_2">
+                        <ul class="list">
+                            {% for key in book_info %}
+                                <li class="list_content">
+                                    <div class="grid-item2">
+                                        <p>"{{ key["title"] }}<br>
+                                        Author(s): {{ key["name"] }}<br>
+                                        Publish year: {{ key["pub_year"] }}<br>
+                                        Expected pages: {{ key["pages"] }}"</p>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
         {% else %}
             <div class="error">
                 <p>

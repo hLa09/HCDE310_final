@@ -9,8 +9,8 @@
 <!--html body-->
     <!--Header block-->
     {% block header %}
-        <h2>Author Results for: {{ user_input }}</h2>
-        <p><a class="searchlink" href=" {{ search_url }}" > Search url </a></p>
+        <h2 class="result_h2"><a class="searchlink" href=" {{ search_url }}">
+            Author Results For</a>: {{ user_input }}</h2>
     {% endblock %}
 
 
@@ -31,23 +31,33 @@
                 </section>
                 <section class="display_info">
                     {% for key in author_bio %}
-                        <div class="info">
-                            {% if key.bio != "" %}
+                        <div>
 
-                                <p>{{ key.bio }} <br>
+                            {% if key.bio != "" %}
+                                <p class="info">{{ key.bio }} <br>
                                     {{ key.url }}</p>
+                            {% else %}
+                                <div class="notice">
+                                    <p>
+                                        There are current no records of author's biography.<br>
+                                        Please take a look of one of the link below for more info on the author. (ID: {{ key.author_id }})
+                                    </p>
+                                </div>
                             {% endif %}
                         </div>
                     {% endfor %}
                 </section>
-                <section>
-                    {% for urls in redirect_url %}
-                        <ul>
-                            <li><a href="{{ urls }}">{{ indentifier }} Search relate link</a> </li>
-                        </ul>
-                    {% endfor %}
-                </section>
+
             </div>
+            <section class="redirect">
+                {% for urls in redirect_url %}
+                <ul>
+                    <li><a href="{{ urls }}">{{ indentifier }} Search related links</a>....  </li>
+                </ul>
+
+                {% endfor %}
+                <p> ... ...to {{ user_input }}</p>
+            </section>
         {% else %}
             <div class="error">
                 <p>
