@@ -292,9 +292,9 @@ def get_book_info(result, cover_i, book_cover):
 
 ##########################################################################
 
-url = get_search_url("author", "Shannon Messenger")
-result = safe_get_search(url)
-olid = get_olid_id(result)
+# url = get_search_url("author", "Shannon Messenger")
+# result = safe_get_search(url)
+# olid = get_olid_id(result)
 # author_url = get_author_url(olid)
 # print(author_url)
 # author_bio = safe_get_author(author_url)
